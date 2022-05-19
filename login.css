@@ -1,0 +1,61 @@
+body{
+    background: url(img/Captura\ de\ tela\ 2022-05-15\ 141812.jpg) no-repeat center;
+    width: 90%;
+    height: 90%;
+    display: table;
+    background-size: cover;
+        
+    }
+    .container figure.costume img{
+        float: left;
+        max-width: 640px;
+        transform: translateY(0px);
+        animation: float 5s ease-in-out infinite;
+    }
+        
+    
+    img{
+        float: right;
+        max-width: 640px;
+        transform: translateY(0px);
+        animation: float 5s ease-in-out infinite;
+    }
+     
+     @keyframes float{
+    0%{
+        transform: translateY(0px);
+    
+    }
+    50%{
+        transform: translateY(-45px);
+    }
+    100%{
+        transform: translatey(0px);
+    }
+     }
+     form{
+         position: relative;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50% , 50%);
+         background: #fff;
+         border-radius: 10px;
+         padding: 50px;
+         width: min-content;
+         color: #2b344b;
+         justify-content: center;
+         margin: auto 0;
+       
+     }
+     title{
+         font-size: 1.8em;
+         margin-bottom: 10%;
+     }
+     input{
+         min-width: 200px;
+         border-radius: 22px;
+         border: 2px #6f7e8a solid;
+         padding: 5px;
+         margin: 0px 0px 12px -5px;
+     }
+     
