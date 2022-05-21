@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow'sans-serif;
+}
+
+.header {
+    background-color: white;
+    color: #32b9cd;
+    border-bottom: 3px solid #00FFFF;
+
+
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+
+
+
+}
+
+
+.navbar {
+    display: flex;
+    list-style: none;
+    width: 400px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #00BFFF;
+}
+
+.agora {
+    font-weight: 900;
+}
+
+.banner {
+    background-image: url('img/855974.jpg');
+    background-size: cover;
+
+}
+
+.banner .container {
+    height: 550px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+form{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , 5%);
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    width: min-content;
+    color: #2b344b;
+    justify-content: center;
+    margin: auto 0;
+    align-items: center;
+   
+   
+  
+}
+title{
+    font-size: 1.8em;
+    margin-bottom: 10%;
+    
+}
+input{
+    min-width: 200px;
+    border-radius: 22px;
+    border: 2px #6f7e8a solid;
+    padding: 5px;
+    margin: 0px 0px 12px -5px;
+}
+
+button{
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    border: none;
+    border-radius: 1000px;
+    color: #000;
+    transition: all 0.6s ease-in-out 0s;
+    box-shadow: inset 0 0 0px #000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+button:hover{
+    background: transparent;
+    color: #00BFFF;
+    transform: scale(0.8) rotate(360deg);
+    box-shadow: 0 0 60px rgba(0, 191, 255);
+    cursor: grab;
+    border: 2px solid #00ffcb; 
+}
+.footer {
+    background-color: #00BFFF;
+    color: white;
+}
+
+.footer .container {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius:solid 2px ;
+}
