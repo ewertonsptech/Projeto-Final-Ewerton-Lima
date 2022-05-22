@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <script src="https://kit.fontawesome.com/98e9292b2b.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  
 </head>
 <body>
     <div class="header">
         <div class="container">
-            <h1><img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="40px"></h1>
+            <h1><img src="audio/images.jpg" width="100px"></h1>
             <ul class="navbar">
                 <li class="agora"><a href="index.html">Início</a></li>
-                <li><a href="#">Curiosidades</a></li>
+                <li><a href="#">Galeria</a></li>
                 <li class="agora"><a href="login.html">Login</a></li>
                 <li class="agora"><a href="cadastro.html">Cadastro</a></li>
             </ul>
@@ -36,14 +37,14 @@
             
             
             <div class="input">
-           <input id="nome" name="nome" placeholder="Digite Seu Nome" type="text">
+           <input id="input_nome"placeholder="Digite Seu Nome"  pattern="[a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z]*">
 
             </div>
             <div>
-                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="80px">
+                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="80px"  pattern="[a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z]*">
             <div class="input">
               
-            <input id="email" name="email" placeholder="Digite Seu Email" type="text">
+            <input id="email" placeholder="Digite Seu Email"  >
             </div>
             <div>
                 <div></div>
@@ -51,14 +52,14 @@
          
             <div class="input">
                
-            <input id="senha" name="senha" placeholder=" Digite Sua Senha" type="password">
+         <input id="input_senha" placeholder="Digite Sua Senha">
             </div>
             </div>
           
             <div id="btn"></div>
             <button type="submit" onclick="cadastrar()">Cadastrar</button>
             
-            
+          
             </form>
     
 </div>
@@ -68,8 +69,9 @@
 
 <div class="footer">
     <div class="container">
-        <h4>Feito por Amor por Ewerton Lima &copy; 2022</h4>
+        <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
     </div>      
 </div>
+<span id="resultado"></span>
 </body>
 </html>
