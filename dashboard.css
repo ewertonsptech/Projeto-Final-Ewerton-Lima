@@ -133,7 +133,7 @@ button:hover{
 
 li:hover{
     background: transparent;
- color:  #0000ff;
+    color:  #0000ff;
    
     box-shadow: 0 0 60px;
     cursor: grab;
@@ -190,7 +190,7 @@ form{
   
 }
 h3{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .footer {
     background-color: #00BFFF;
