@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style.css">
-   <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/98e9292b2b.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="audio/images (1).jpg">
+ 
 </head>
 <body>
     <div class="header">
@@ -29,7 +31,7 @@
             </H2>
             
             <div>
-    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="100px" >
+    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="70px" >
 
             </div>
             
@@ -37,44 +39,92 @@
             <label for="email"> </label>
             <div class="input">
               
-            <input id="email" name="email" placeholder="Digite Seu Email" type="email" required="@">
+            <input id="input_email"placeholder="Digite Seu Email" type="email" >
             </div>
             <div>
-            <img src="img/images.jpg" width="100px">
+            <img src="img/images.jpg" width="60px">
          
             <div class="input">
                
-            <input id="senha" name="senha" placeholder=" Digite Sua Senha" type="password" required = "">
+            <input id="input_senha" placeholder=" Digite Sua Senha" type="password">
             </div>
             </div>
-           
-            <div id="btn"></div>
-            <button type="submit" onclick="cadastrar()">Entrar</button>
-            
+            <div class="input">
+                <div class="input">
+                    <img src="audio/voador-clash-of-clans.png" width="80px">
+               
+                    <input id="input_personagem_favorito" name="senha" placeholder=" Qual Seu Personagem Favorito" type="text">
+                    </div>
+                    </div>
+                  
+           <center>
+           <button  onclick="cadastrar()">Entrar</button>
+           </center>
             
             </form>
     
 </div>
     </div>
-    
+
     
 
 
 </div>
 
+<div id="resultado"></div>
 <div class="footer">
+    
     <div class="container">
       
-        <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
-        
-        <div>
-            <div class="item">
       
-        <i class="fa-brands fa-whatsapp"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-github" ></i>
-        </div>
-    </div>      
+     
+      <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
+    </div>
 </div>
 </body>
 </html>
+<script>
+
+ var lista_pesrsonagem_favorito = []
+    
+ function cadastrar(){
+    
+    
+
+    var Email = input_email.value
+    var senhaUsuario = Number(input_senha.value)
+   
+  
+    lista_pesrsonagem_favorito.push(input_personagem_favorito.value)
+    if(senhaUsuario == ""){
+    resultado.innerHTML = `<span style="color: red;">Preencha o Campo Senha</span>`
+  
+}
+    else if(senhaUsuario.length < 5){
+        resultado.innerHTML = `<span style="color: red;">Preencha o Campo Senha com Pelo Menos 5 Digitos/span>`
+    }
+   
+    //declarando variavel
+    var validos ="";
+    
+    //divide emailStr em um array de strings separados pelo 'separador esvirgula'
+    var emails = emailStr.split(',')
+    
+    //use a que mais lhe apatecer
+    var regex = /^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/;
+    
+    //o loop  para iteração com o array
+    for (var i = 0; i <= emails.length; i++) {
+    
+         // se o email diferente de nulo e satisfaz a regex, acumula os validos na variável 'validos' concatenando com ; (ponto e virgula)
+         if( emails[i] != "" && regex.test(emails[i])){
+             validos += (emails[i]) +";" ;  
+         }
+    }
+    
+    //função substr para retirar ultimo ; (ponto e virgula)
+    console.log(validos.substr(0,(validos.length - 1)));
+     }
+     
+    
+    </script>

@@ -60,13 +60,13 @@ body {
     
 }
 form{
-    position: relative;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50% , 5%);
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   margin: 0 auto;
     background: #fff;
     border-radius: 20px;
-    padding: 40px;
+    padding: 20px;
     width: min-content;
     color: #2b344b;
     justify-content: center;
@@ -109,22 +109,31 @@ border: solid 5px #dc2626;
     }
 }
 button{
-    width: 200px;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #00BFFF;
+    width: 120px;
     height: 40px;
-    font-weight: bold;
-    font-size: 15px;
-    border: none;
-    border-radius: 1000px;
-    color: #000;
     transition: all 0.6s ease-in-out 0s;
-    box-shadow: inset 0 0 0px #000;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    border-radius: 12px;
+  
+
 
 }
 button:hover{
     background: transparent;
     color: #00BFFF;
-    transform: scale(0.8) rotate(360deg);
+   
     box-shadow: 0 0 60px rgba(0, 191, 255);
     cursor: grab;
     border: 2px solid #00ffcb; 
@@ -132,13 +141,12 @@ button:hover{
 .footer {
     background-color: #00BFFF;
     color: white;
+    display: flex;
 }
 
 .footer .container {
     display: flex;
     height: 100px;
-    align-items: center;
-    justify-content: center;
 }
 h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -242,8 +250,65 @@ h2{
   li:hover{
     background: transparent;
     color: #0000ff;
-    transform: scale(1.2) rotate(360deg);
+   
     box-shadow: 0 0 60px;
     cursor: grab;
     border: 38px #0000FF; 
   }
+  .icon{
+      display: inline-block;
+      font-size: 44px;
+      animation: float 5s ease-in-out infinite;
+
+  }
+  .fa-brands .fa-whatsapp{
+      animation-delay: 1s;
+  }
+  .fa-brands .fa-facebook{
+      animation-delay: 2s;
+  }
+  @keyframes float{
+      0%{
+          transform: translateY(0);
+      }
+      50%{
+          transform: translateY(-15px);
+      }
+      100%{
+          transform: translateY(0);
+      }
+  }
+  .footer .container h4{
+      justify-content: center;
+      align-items: center;
+      margin: auto 0;
+      text-align: center;
+  }
+  .localV{
+    background-image: url(audio/transferir\ \(3\).jpg);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    position: relative;
+    background-size: 470px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .textV{
+    width: 30%;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A8A8A8;
+    color: white;
+    font-size: 30px;
+    opacity: 0.8;
+    border-radius: 3px 3px 3px 3px;
+  }
+  

@@ -53,7 +53,7 @@ body {
 .banner .container {
     height: 550px;
     display: flex;
-    color: white;
+
     align-items: center;
     justify-content: center;
     align-items: center;
@@ -61,11 +61,13 @@ body {
 }
 form{
     position: relative;
-    top: 45%;
-    left: 45%;
-    transform: translate(-45% , 2%);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+   
     background: #fff;
-    border-radius: 20px;
+    border-radius: 30px;
     padding: 20px;
     justify-content: center;
     align-items: center;
@@ -85,28 +87,37 @@ input{
     padding: 10px;
     margin: 0px 0px 12px -5px;
 }
-
 button{
-    width: 200px;
+    justify-content: center;
+    align-items: center;
+    
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #00BFFF;
+    width: 120px;
     height: 40px;
-    font-weight: bold;
-    font-size: 15px;
-    border: none;
-    border-radius: 1000px;
-    color: #000;
     transition: all 0.6s ease-in-out 0s;
-    box-shadow: inset 0 0 0px #000;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    border-radius: 12px;
 
 }
 button:hover{
     background: transparent;
     color: #00BFFF;
-    transform: scale(0.8) rotate(360deg);
+   
     box-shadow: 0 0 60px rgba(0, 191, 255);
     cursor: grab;
     border: 2px solid #00ffcb; 
 }
+
+
+
 .footer {
     background-color: #00BFFF;
     color: white;
@@ -159,8 +170,73 @@ input:invalid{
     li:hover{
         background: transparent;
         color: #0000ff;
-        transform: scale(1.2) rotate(360deg);
+       
         box-shadow: 0 0 60px;
         cursor: grab;
         border: 38px #0000FF; 
       }
+      select{
+          color: #000;
+      }
+
+      
+.dash-right .avisos {
+    width: 100%;
+    /* border: 3px solid pink; */
+    color: rgb(216, 216, 216);
+    font-family: "Exo 2", sans-serif;
+  }
+  
+ 
+
+  
+  .dash-right .avisos .div-form label {
+    width: 100%;
+  }
+  
+  .dash-right .avisos .div-form input {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .dash-right .avisos .div-form textarea {
+    width: 100%;
+    /* color: #E6005A; */
+    border: 3px solid #00BFFF;
+    background-color: white;
+    border-radius: 5px;
+  }
+  
+  .dash-right .avisos .div-form button {
+    cursor: pointer;
+    font-family: "Exo 2", sans-serif;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #00BFFF;
+    width: 120px;
+  }
+  
+ 
+  
+  .publicacao {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    border-bottom: 3px solid #00BFFF;
+    padding: 20px;
+  }
+  
+  .publicacao > *:not(:last-child) {
+    padding: 0 0 10px 0;
+  }
+  
+  .div-results {
+    width: 100%;
+  }

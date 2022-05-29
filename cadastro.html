@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
-    <script src="script.js"></script>
+    <link rel="icon" href="audio/images (1).jpg">
+  
+    <script src="https://kit.fontawesome.com/98e9292b2b.js" crossorigin="anonymous"></script>
   
 </head>
 <body>
@@ -31,50 +33,107 @@
             <H2 class="tittle"><center>Cadastrar</center>
             </H2>
             
-            <div>
-    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="80px" >
+           
+                <center>
+    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="60px" >
 
-            </div>
             
             
+          
             <div class="input">
            <input id="input_nome"placeholder="Digite Seu Nome"  
-           pattern="[a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z- ]*" type="text" required="">
-
+         type="text" >
+               
             </div>
+        
             <div>
-                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="80px"  pattern="[a-b-c-d-e-f-g-h-i-j-k-l-m-n-o-p-q-r-s-t-u-v-w-x-y-z-A-B-C-D-E-F-G-H-I-J-K-L-M-N-O-P-Q-R-S-T-U-V-W-X-Y-Z]*">
+            </center>
+                <center>
+                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="60px" >
             <div class="input" >
               
-            <input id="email" placeholder="Digite Seu Email" type="email" required="@">
+            <input id="email" placeholder="Digite Seu Email" type="email">
             </div>
+                </center>
             <div>
                 <div></div>
+                <center>
             <img src="img/images.jpg" width="60px">
          
             <div class="input">
                
-         <input id="input_senha" placeholder="Digite Sua Senha" required = "">
+         <input id="input_senha" placeholder="Digite Sua Senha" >
             </div>
             </div>
+            </center>
+            
+
+               
           
-            <div id="btn"></div>
-            <button type="submit" onclick="cadastrar()">Cadastrar</button>
+            
+            <button onclick="cadastrar()" class="cta">Cadastrar
+            <i class="ri-arrow-right-line"></i></button>
             
           
             </form>
+         
     
 </div>
     </div>
     
 </div>
 </div>
-
+<span id="mensagem_erro"></span>
 <div class="footer">
+    
     <div class="container">
-        <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
-    </div>      
-</div>
-<span id="resultado"></span>
+      
+      <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
+    
 </body>
 </html>
+<script>
+
+function cadastrar(){
+
+
+let Nome = input_nome.value
+let Email = email.value
+let Senha = input_senha.value 
+if(Nome == ""){
+    mensagem_erro.innerHTML =  `<span style="color: red;">Preencha o Campo Com  Seu Nome</span>`
+}
+
+else if(Email == ""){
+    mensagem_erro.innerHTML = `<span style="color: red;">Preencha o Campo com Seu Email</span>`
+}
+else if(Senha == ""){
+mensagem_erro.innerHTML = `<span style="color: red;">Preencha o Campo Senha</span>`
+}
+else if(Nome.length <5){
+mensagem_erro.innerHTML = `<span style="color: red;">Digite o Nome Completo</span>`
+}
+//declarando variavel
+var validos ="";
+
+//divide emailStr em um array de strings separados pelo 'separador esvirgula'
+var emails = emailStr.split(',')
+
+//use a que mais lhe apatecer
+var regex = /^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/;
+
+//o loop  para iteração com o array
+for (var i = 0; i <= emails.length; i++) {
+
+     // se amail diferente de nulo e satisfaz a regex, acumula os validos na variável 'validos' concatenando com ; (ponto e virgula)
+     if( emails[i] != "" && regex.test(emails[i])){
+         validos += (emails[i]) +";" ;  
+     }
+}
+
+//função substr para retirar ultimo ; (ponto e virgula)
+console.log(validos.substr(0,(validos.length - 1)));
+ }
+ 
+
+</script>
