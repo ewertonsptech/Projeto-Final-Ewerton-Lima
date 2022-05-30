@@ -60,18 +60,16 @@ body {
     
 }
 form{
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  
     margin: 0 auto;
-   
-    background: #fff;
-    border-radius: 30px;
+   width: 250px;
+    background: rgb(243, 234, 234);
+    border-radius: 20px;
     padding: 20px;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
+    height: 500px;
   
   
 }
@@ -243,4 +241,9 @@ input:invalid{
   
 h3{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+img{
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
 }

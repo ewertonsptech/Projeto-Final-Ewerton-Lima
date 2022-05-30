@@ -138,16 +138,7 @@ button:hover{
     cursor: grab;
     border: 2px solid #00ffcb; 
 }
-.footer {
-    background-color: #00BFFF;
-    color: white;
-    display: flex;
-}
 
-.footer .container {
-    display: flex;
-    height: 100px;
-}
 h2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius:solid 2px ;
@@ -278,12 +269,19 @@ h2{
           transform: translateY(0);
       }
   }
-  .footer .container h4{
-      justify-content: center;
-      align-items: center;
-      margin: auto 0;
-      text-align: center;
-  }
+
+
+  .footer {
+    background-color: #00BFFF;
+    color: white;
+}
+
+.footer .container {
+    display: flex;
+    height: 80px;
+    align-items: flex-end;
+    justify-content: space-evenly;
+}
   .localV{
     background-image: url(audio/transferir\ \(3\).jpg);
     background-repeat: no-repeat;
