@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="css/cadastro.css">
     <link rel="icon" href="audio/images (1).jpg">
   
     <script src="https://kit.fontawesome.com/98e9292b2b.js" crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
 
         <div id="form">
             <div class="form-control">
-            <form action="">
+           
             <h3 class="tittle"><center>Cadastrar</center>
             </h3>
             
@@ -53,7 +53,7 @@
                 <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="50px" >
             <div class="input" >
               
-        <input id="email" placeholder="Digite Seu Email" type="email" required = "" >
+        <input id="input_email" placeholder="Digite Seu Email" type="email" required = "" >
             </div>
                 
            
@@ -88,7 +88,7 @@
             
           
           
-            </form>
+          
          
     
 </div>
@@ -107,26 +107,20 @@
 </html>
 <script>
 
-function cadastrar(){
+function cadastrar() {
+       // aguardar();
 
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = input_nome.value;
+        var emailVar = input_email.value;
+        var senhaVar = input_senha.value;
+        var personagemVar = input_personagem_favorito.value;
 
-let Nome = input_nome.value
-let Email = email.value
-let Senha = input_senha.value 
-if(Nome == ""){
-    mensagem_erro.innerHTML =  `<span style="color: red;">Preencha o Campo Com  Seu Nome</span>`
-}
-
-else if(Email == ""){
-    mensagem_erro.innerHTML = `<span style="color: red;">Preencha o Campo com Seu Email</span>`
-}
-else if(Senha == ""){
-mensagem_erro.innerHTML = `<span style="color: red;">Preencha o Campo Senha</span>`
-}
-else if(Nome.length <5){
-mensagem_erro.innerHTML = `<span style="color: red;">Digite o Nome Completo</span>`
-}
-//declarando variavel
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            //declarando variavel
 var validos ="";
 
 //divide emailStr em um array de strings separados pelo 'separador esvirgula'
@@ -144,9 +138,56 @@ for (var i = 0; i <= emails.length; i++) {
      }
 }
 
-//função substr para retirar ultimo ; (ponto e virgula)
-console.log(validos.substr(0,(validos.length - 1)));
- }
- 
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                persomagemServer : personagemVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                cardErro.style.display = "block";
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>

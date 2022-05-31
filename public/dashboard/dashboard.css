@@ -250,3 +250,51 @@ p{
     align-items: flex-end;
     justify-content: space-evenly;
 }
+.localV{
+    background-image: url(audio/transferir\ \(3\).jpg);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    position: relative;
+    background-size: 470px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  .textV{
+    width: 50%;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #A8A8A8;
+    color: white;
+    font-size: 30px;
+    opacity: 0.8;
+    border-radius: 3px 3px 3px 3px;
+  }
+  
+
+  .imagem-clash{
+      background-image: url();
+      width: 300px;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      display: flex;
+  }
+  iframe{
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 900px;
+      height: 250px;
+  }
+  .banner {
+    background-image: url(https://images2.alphacoders.com/112/1124066.jpg);
+    background-size: cover;
+}

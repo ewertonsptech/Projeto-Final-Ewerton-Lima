@@ -45,8 +45,9 @@ body {
 }
 
 .banner {
-    background-image: url('img/1124066.jpg');
+    background-image: url(https://images2.alphacoders.com/112/1124066.jpg);
     background-size: cover;
+    
 
 }
 
@@ -59,11 +60,11 @@ body {
     align-items: center;
     
 }
-form{
+.form-control{
   
     margin: 0 auto;
    width: 250px;
-    background: rgb(243, 234, 234);
+   background: #fff;
     border-radius: 20px;
     padding: 20px;
     justify-content: center;

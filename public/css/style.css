@@ -45,9 +45,8 @@ body {
 }
 
 .banner {
-    background-image: url('img/1124066.jpg');
+    background-image: url(https://images2.alphacoders.com/112/1124066.jpg);
     background-size: cover;
-
 }
 
 .banner .container {
@@ -59,7 +58,7 @@ body {
     align-items: center;
     
 }
-form{
+.form-control{
    justify-content: center;
    align-items: center;
    text-align: center;
@@ -282,33 +281,7 @@ h2{
     align-items: flex-end;
     justify-content: space-evenly;
 }
-  .localV{
-    background-image: url(audio/transferir\ \(3\).jpg);
-    background-repeat: no-repeat;
-    background-position: 100%;
-    position: relative;
-    background-size: 470px;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 200px;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  
-  .textV{
-    width: 30%;
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #A8A8A8;
-    color: white;
-    font-size: 30px;
-    opacity: 0.8;
-    border-radius: 3px 3px 3px 3px;
-  }
+
   
 h3{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
