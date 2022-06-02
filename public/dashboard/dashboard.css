@@ -298,3 +298,18 @@ p{
     background-image: url(https://images2.alphacoders.com/112/1124066.jpg);
     background-size: cover;
 }
+
+h2{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #00CFFF;
+  margin: 0%;
+}
+.div-results{
+    width: 100%;
+    height: 50vh;
+  background: #00CFFF;
+
+}
+.feed-container{
+    background: #00DFFF;
+}
