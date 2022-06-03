@@ -66,19 +66,30 @@
             </div>
             </div>
             
-            <img src="audio/voador-clash-of-clans.png" width="50px">
+        
             <div class="input">
             
                
-           
-                <input id="input_personagem_favorito" name="senha" placeholder=" Qual Seu Personagem Favorito" type="text" required = "">
+         <h5> Qual Seu Personagem Favorito: </h5> <select id="select_personagem">
+
+            <option value="1">Mago</option>
+            <option value="2">Bruxa</option>
+            <option value="3">Gigante</option>
+            <option value="4">Principe</option>
+            <option value="5">Mega Cavaleiro</option>
+            <option value="6">Gigante Real</option>
+          </select>
+                
                 </div>
-                 <center>
-                <button onclick="cadastrar()" class="cta">Cadastrar
-                    <i class="ri-arrow-right-line"></i></button>
-                 </center>
+                <center>
+                    <button onclick="cadastrar()" class="cta">Cadastrar
+                        <i class="ri-arrow-right-line"></i></button>
+                     </center>
                 </div>
+                
             </div>
+
+            
     </div>
 </div>
 
@@ -115,7 +126,7 @@ function cadastrar() {
         var nomeVar = input_nome.value;
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
-        var personagemVar = input_personagem_favorito.value;
+        var personagemVar = select_personagem.value;
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar == "") {
             cardErro.style.display = "block"
@@ -165,13 +176,10 @@ for (var i = 0; i <= emails.length; i++) {
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                cardErro.style.display = "block";
-
-                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
                 setTimeout(() => {
                     window.location = "login.html";
-                }, "2000")
+                }, "1000")
                 
                 limparFormulario();
                 finalizarAguardar();

@@ -87,8 +87,7 @@ input{
     margin: 0px 0px 12px -5px;
 }
 button{
-    justify-content: center;
-    align-items: center;
+   
     
     cursor: pointer;
     font-family: "Exo 2", sans-serif;
@@ -96,7 +95,7 @@ button{
     border-radius: 5px;
     font-weight: 600;
     font-size: 18px;
-    padding: 10px 15px;
+
     color: white;
     background-color: #00BFFF;
     width: 120px;
