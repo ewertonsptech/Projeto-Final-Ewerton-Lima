@@ -43,6 +43,7 @@
               
             <input id="input_email"placeholder="Digite Seu Email" type="email"  required = "">
             </div>
+            <span id="span_email" class="span_email"></span>
             <div>
             <img src="img/images.jpg" width="60px">
          
@@ -50,6 +51,7 @@
                
             <input id="input_senha" placeholder=" Digite Sua Senha" type="password" required = "">
             </div>
+            <span id="span_senha" class="span_senha"></span>
           
                   
            <center>
@@ -87,6 +89,15 @@ function cadastrar() {
         var emailVar = input_email.value;
         var senhaVar = input_senha.value;
     
+
+        if (emailVar.length <6 && emailVar.indexOf(".com") > 3){
+            span_email.innerHTML = "Email/Senha Errada Tente Novamente"
+
+        }
+            else if(senhaVar.length < 3){
+              span_senha.innerHTML = "Senha Errada Tente Novamente"
+            }
+            else{
 
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
@@ -152,6 +163,6 @@ function cadastrar() {
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
-
+}
 
     </script>

@@ -84,7 +84,7 @@ input{
     min-width: 200px;
     border-radius: 22px;
     border: 2px #6f7e8a solid;
-    padding: 5px;
+    padding: 10px;
     margin: 0px 0px 12px -5px;
 }
 input:invalid{
@@ -285,4 +285,12 @@ h2{
   
 h3{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+.span_email{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #dc2626;
+}
+.span_senha{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #dc2626;
 }

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,11 @@
     <title>Cadastro</title>
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="icon" href="audio/images (1).jpg">
-  
+
     <script src="https://kit.fontawesome.com/98e9292b2b.js" crossorigin="anonymous"></script>
-  
+
 </head>
+
 <body>
     <div class="header">
         <div class="container">
@@ -24,115 +26,123 @@
             </ul>
         </div>
     </div>
-<div class="banner">
-    <div class="container">
-  
+    <div class="banner">
+        <div class="container">
 
-        <div id="form">
-            <div class="form-control">
-           
-            <h3 class="tittle"><center>Cadastrar</center>
-            </h3>
-            
-            
-         
-            
-    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="50px" >
 
-            
-            
-         
-            <div class="input">
-           <input id="input_nome"placeholder="Digite Seu Nome"  
-         type="text" required = "">
-         <div class="div1">
-            <span id="span_nome"></span>
-            </div>
-   
-               
-           
-            
-            <center>
-                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="60px" >
-           
-              
-        <input id="input_email" placeholder="Digite Seu Email" type="email" required = "" >
-        <div class="div4">
-            <span id="span_email"></span>
-            </div>
-    </center>
-      
-<center>
-            <img src="img/images.jpg" width="60px">
-         
-            
-               
-         <input id="input_senha" placeholder="Digite Sua Senha"  required = "">
-           
-        
-        
-        </center>
-           
-               
-         <p> Qual Seu Personagem Favorito: </p> <select id="select_personagem">
+            <div id="form">
+                <div class="form-control">
 
-            <option value="1">Mago</option>
-            <option value="2">Bruxa</option>
-            <option value="3">Gigante</option>
-            <option value="4">Principe</option>
-            <option value="5">Mega Cavaleiro</option>
-            <option value="6">Gigante Real</option>
-          </select>
-                
-          
-        </div>
-        
-        
-    <div class="input">
-        <i class="ri-arrow-right-line"></i>
- 
-<center>
-<button onclick="cadastrar()" class="cta">Cadastrar</button>
-</center>
-    </div>
-        
+                    <h3 class="tittle">
+                        <center>Cadastrar</center>
+                    </h3>
+
+
+
+                    <center>
+                        <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="50px">
+
+                    </center>
+
+
+                    <div class="input">
+                        <input id="input_nome" placeholder="Digite Seu Nome" type="text" required min="2" max="90">
+
+                        <div class="div1">
+                            <span id="span_nome" class="span_nome"></span>
+                        </div>
+
+
+
+
+                        <center>
+                            <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="40px">
+
+
+                            <input id="input_email" placeholder="Digite Seu Email" type="email" required="@" min="0"
+                                max="50">
+                            <div class="div4">
+                                <span id="span_email" class="span_email"></span>
+                            </div>
+                        </center>
+
+                        <center>
+                            <img src="img/images.jpg" width="40px">
+
+
+
+                            <input id="input_senha" placeholder="Digite Sua Senha" required min="0" max="10"
+                                type="password">
+
+                                <span id="span_senha" class="span_senha"></span>
+                           
+                        </center>
+
+
+                        </center>
+
+
+                        <p> Qual Seu Personagem Favorito: </p> <select id="select_personagem" required>
+
+                            <option value="1">Mago</option>
+                            <option value="2">Bruxa</option>
+                            <option value="3">Gigante</option>
+                            <option value="4">Principe</option>
+                            <option value="5">Mega Cavaleiro</option>
+                            <option value="6">Gigante Real</option>
+                        </select>
+
+
+                    </div>
+
+
+                    <div class="input">
+                        <i class="ri-arrow-right-line"></i>
+
+                        <center>
+                            <button onclick="cadastrar()" class="cta">Cadastrar</button>
+                        </center>
+                        <div id="resultado"></div>
+                    </div>
+
                 </div>
-                
+
             </div>
 
-            
+
+        </div>
     </div>
-</div>
 
 
-               
-          
-            
-          
-          
-          
-         
-    
-</div>
+
+
+
+
+
+
+
+
     </div>
-    
-</div>
-</div>
-<span id="mensagem_erro"></span>
-<div class="footer">
-    
-    <div class="container">
-      
-      <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
-    
+    </div>
+
+    </div>
+    </div>
+    <span id="mensagem_erro"></span>
+    <div class="footer">
+
+        <div class="container">
+
+            <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
+
 </body>
+
 </html>
 <script>
 
 
 
-function cadastrar() {
-       // aguardar();
+    function cadastrar() {
+        // aguardar();
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -141,40 +151,33 @@ function cadastrar() {
         var senhaVar = input_senha.value;
         var personagemVar = select_personagem.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-
-            if(nomeVar.length < 3){
-                cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Nome Inválido)";
-            }
-            else if(senhaVar.length <3){
-              cardErro.style.display = "block"
-              mensagem_erro.innerHTML = ("Senha Muito Pequena tente Novamente")
-            }
-
-       //declarando variavel
-var validos ="";
-
-//divide emailStr em um array de strings separados pelo 'separador esvirgula'
-var emails = emailStr.split(',')
-
-//use a que mais lhe apatecer
-var regex = /^(\s?[^\s,]+@[^\s,]+\.[^\s,]+\s?,)*(\s?[^\s,]+@[^\s,]+\.[^\s,]+)$/;
-
-//o loop  para iteração com o array
-for (var i = 0; i <= emails.length; i++) {
-
-     // se amail diferente de nulo e satisfaz a regex, acumula os validos na variável 'validos' concatenando com ; (ponto e virgula)
-     if( emails[i] != "" && regex.test(emails[i])){
-         validos += (emails[i]) +";" ;  
-     }
-}
-
      
 
 
+        if (nomeVar.length < 3) {
+            span_nome.innerHTML = "Nome Inválido"
+        }
+        
+
+
+        else if (senhaVar.length < 3) {
+            span_senha.innerHTML = "Senha Muito Pequena Tente Novamente"
+        }
+       else   if (emailVar.length <6  && emailVar.indexOf("@") > 2 && emailVar.indexOf(".com") > 3){
+            span_email.innerHTML = "Email/Senha Errada Tente Novamente"
+        }
+
+        
+        else {
+             if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+
+           
+
+         
+
+           
             finalizarAguardar();
             return false;
         }
@@ -194,7 +197,7 @@ for (var i = 0; i <= emails.length; i++) {
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                personagemServer : personagemVar
+                personagemServer: personagemVar
             })
         }).then(function (resposta) {
 
@@ -205,7 +208,7 @@ for (var i = 0; i <= emails.length; i++) {
                 setTimeout(() => {
                     window.location = "login.html";
                 }, "1000")
-                
+
                 limparFormulario();
                 finalizarAguardar();
             } else {
@@ -222,5 +225,7 @@ for (var i = 0; i <= emails.length; i++) {
     function sumirMensagem() {
         cardErro.style.display = "none"
     }
+}
+
 
 </script>
