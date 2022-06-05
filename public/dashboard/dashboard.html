@@ -12,7 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
     <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
     <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
-    <!-- <script src="..//js/funcoes.js"></script> -->
+    <script src="..//js/funcoes.js"></script> -->
   
 
 </head>
@@ -36,7 +36,7 @@
     <img src="img/Bem_Vindo.png" alt="">
     </center>
     <div class="localV">
-        <div class="textV"> Seja Bem-vindo,<span id="b_usario"></span></div>
+        <div class="textV">Seja Bem-vindo, <div  id="b_usuario"></div></div>
       </div>
     
 
@@ -87,8 +87,17 @@
     const data = {
       labels: labels,
       datasets: [{
-        labels2: ' Média de Jogadores',
-        backgroundColor: 'rgb(0,191,255)',
+        labels: ' Média de Jogadores',
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)',
+      'rgb(139,0,139)',
+      'rgb(255,255,0)',
+      'rgb(255,0,0)',
+      'rgb(0,255,0)',
+     
+    ],
         borderColor: 'rgb(135,206,250)',
         data: [50000000, 49000000, 43000000 , 30000000 , 26500000 ,20000000 , 23000000 , [200000000 , 24 , 27 , 23, 20 , 265]],
       }
@@ -98,7 +107,7 @@
   
 
     const config2 = {
-      type: 'line',
+      type: 'doughnut',
       data: data,
       options: {}
     };
@@ -129,7 +138,7 @@
 </html>
 <script>
 
-// b_usario.innerHTML = sessionStorage.NOME_USUARIO
+b_usuario.innerHTML = sessionStorage.NOME_USUARIO
 
 
 
@@ -162,8 +171,6 @@ function obterDadosGrafico(idAquario) {
         if (response.ok) {
             response.json().then(function (resposta) {
                 console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                resposta.reverse();
-
                 plotarGrafico(resposta, idAquario);
             });
         } else {
@@ -185,18 +192,16 @@ function plotarGrafico(resposta, idAquario) {
         labels: [],
         datasets: [
             {
-                yAxisID: 'y-umidade',
                 label: '',
-                borderColor: '#32B9CD',
-                backgroundColor: '#32b9cd8f',
-                fill: true,
+                backgroundColor: '#ffffff',
+                borderColor: '#ffffff',
                 data: []
             },
             {
-                yAxisID: 'y-temperatura',
+                yAxisID: 'y-totalpersonagens',
                 label: 'Personagem Favoritos',
                 borderColor: '#FFF',
-                backgroundColor: '#00BFFF',
+                backgroundColor:  [ 'rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'rgb(255, 205, 86)', 'rgb(139,0,139)', 'rgb(255,255,0)', 'rgb(255,0,0)', 'rgb(0,255,0)',],
                 fill: true,
                 data: []
             }
@@ -206,8 +211,8 @@ function plotarGrafico(resposta, idAquario) {
     for (i = 0; i < resposta.length; i++) {
         var registro = resposta[i];
         dados.labels.push(registro.personagem);
-        dados.datasets[1].data.push(registro.personagem);
-        dados.datasets[1].data.push(registro.numero);
+        dados.datasets[0].data.push(registro.personagem);
+        dados.datasets[1].data.push(registro.voto);
     }
 
     console.log(JSON.stringify(dados));
@@ -221,40 +226,28 @@ function plotarGrafico(resposta, idAquario) {
             hoverMode: 'index',
             stacked: false,
             title: {
-                display: false,
-                text: 'Dados capturados'
+                display: true,
+                text: 'Os Personagens mais Escolhidos pelos Nossos Jogadores'
             },
             scales: {
                 yAxes: [{
                     type: 'linear',
                     display: true,
                     position: 'left',
-                    id: 'y-temperatura',
+                    id: 'y-totalpersonagens',
                     ticks: {
                         beginAtZero: true,
-                        max: 100,
+                        max: 50,
                         min: 0
                     }
                 }, {
-                    type: 'linear',
                     display: false,
-                    position: 'right',
-                    id: 'y-umidade',
-                    ticks: {
-                        beginAtZero: true,
-                        max: 100,
-                        min: 0
-                    },
-
-                    gridLines: {
-                        drawOnChartArea: false,
-                    },
                 }],
             }
         }
     });
 
-    setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+  setInterval(atualizarGrafico(idAquario, dados), 4000);
 }
 
 
@@ -269,19 +262,22 @@ function atualizarGrafico(idAquario, dados) {
         if (response.ok) {
             response.json().then(function (novoRegistro) {
 
-                console.log(`Dados recebidos: ${JSON.stringify(novoRegistro)}`);
+                console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
                 console.log(`Dados atuais do gráfico: ${dados}`);
 
+            for (i = 0; i < novoRegistro.length; i++) {
+                var registro = novoRegistro[i];
                 // tirando e colocando valores no gráfico
                 dados.labels.shift(); // apagar o primeiro
-                dados.labels.push(novoRegistro[0].personagem); // incluir um novo momento
+                dados.labels.push(registro.personagem);// incluir um novo momento
                 
                 dados.datasets[0].data.shift();  // apagar o primeiro de umidade
-                dados.datasets[0].data.push(novoRegistro[0].personagem); // incluir uma nova medida de umidade
+                dados.datasets[0].data.push(registro.personagem); // incluir uma nova medida de umidade
                 
                 dados.datasets[1].data.shift();  // apagar o primeiro de temperatura
-                dados.datasets[1].data.push(novoRegistro[0].fkpersonagemfavorito); // incluir uma nova medida de temperatura
-
+                dados.datasets[1].data.push(registro.voto); // incluir uma nova medida de temperatura
+            }   
+            
                 window.myChart.update();
 
                 // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
@@ -290,7 +286,7 @@ function atualizarGrafico(idAquario, dados) {
         } else {
             console.error('Nenhum dado encontrado ou erro na API');
             // Altere aqui o valor em ms se quiser que o gráfico atualize mais rápido ou mais devagar
-            proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 2000);
+            proximaAtualizacao = setTimeout(() => atualizarGrafico(idAquario, dados), 200000);
         }
     })
         .catch(function (error) {

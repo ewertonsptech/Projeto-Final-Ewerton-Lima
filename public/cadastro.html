@@ -20,6 +20,7 @@
                 <li><a href="#">Galeria</a></li>
                 <li class="agora"><a href="login.html">Login</a></li>
                 <li class="agora"><a href="cadastro.html">Cadastro</a></li>
+                <li class="agora"><a href="simulador.html">Simulador</a></li>
             </ul>
         </div>
     </div>
@@ -34,43 +35,39 @@
             </h3>
             
             
-           
+            <centr>
             
-    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="50px" >
+    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="30px" >
 
             
             
-          
+         
             <div class="input">
            <input id="input_nome"placeholder="Digite Seu Nome"  
          type="text" required = "">
                
-            </div>
-        
-            <div>
-            
-            
-                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="50px" >
-            <div class="input" >
-              
-        <input id="input_email" placeholder="Digite Seu Email" type="email" required = "" >
-            </div>
-                
            
             
-            <img src="img/images.jpg" width="50px">
+            
+                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="30px" >
+           
+              
+        <input id="input_email" placeholder="Digite Seu Email" type="email" required = "" >
+           
+      
+
+            <img src="img/images.jpg" width="30px">
          
-            <div class="input">
+            
                
          <input id="input_senha" placeholder="Digite Sua Senha"  required = "">
-            </div>
-            </div>
-            
+           
         
-            <div class="input">
-            
+        
+           
+           
                
-         <h5> Qual Seu Personagem Favorito: </h5> <select id="select_personagem">
+         <p> Qual Seu Personagem Favorito: </p> <select id="select_personagem">
 
             <option value="1">Mago</option>
             <option value="2">Bruxa</option>
@@ -80,11 +77,17 @@
             <option value="6">Gigante Real</option>
           </select>
                 
-                </div>
-                <center>
+               <center>
+          <div class="input">
                     <button onclick="cadastrar()" class="cta">Cadastrar
                         <i class="ri-arrow-right-line"></i></button>
-                     </center>
+                    </center>
+                </div>
+           
+            </div>
+            
+          </div>
+        
                 </div>
                 
             </div>
@@ -169,7 +172,7 @@ for (var i = 0; i <= emails.length; i++) {
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                persomagemServer : personagemVar
+                personagemServer : personagemVar
             })
         }).then(function (resposta) {
 

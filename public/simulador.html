@@ -1,0 +1,196 @@
+ <!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clash Royale | Avisos</title>
+
+  
+    <link rel="stylesheet" href="css/simulador.css">
+  
+   
+    <link rel="icon" href="audio/images (1).jpg">  
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+        <div class="header">
+            <div class="container">
+                <h1><img src="audio/images.jpg" width="100px"></h1>
+                <ul class="navbar">
+                    <li class="agora"><a href="index.html">Início</a></li>
+                    <li class="agora"><a href="./dashboard/dashboard.html">Dashboard</a></li>
+                    <li class="agora"><a href="login.html">Login</a></li>
+                    <li class="agora"><a href="cadastro.html">Cadastro</a></li>
+                    <li class="agora"><a href="simulador.html">Simulador</a></li>
+                </ul>
+            </div>
+        </div>
+    
+   
+
+       
+       <div class="banner">
+            <div class="container">
+
+    
+                <div id="form">
+                    <div class="form-control"><center>
+                        <img src="audio/1641576324_95_Clash-Royale-como-obter-joias.png" alt="" width="50px">
+                    </center>
+                        <h3 class="tittle"><center>Simulador Clash Royale</center>
+                    </h3>
+                    
+                    <div>
+            
+        
+                    </div>
+                    
+                    
+                    <label for="email"> </label>
+                    <div class="input"><center>
+                      <img src="audio/download.jpg" alt="" width="110px">
+                    </center>
+                    <input id="input_qtd_trofeus"placeholder="Qual sua Quantidade de Troféus" type="text"  required = "">
+                    </div>
+                    <div>
+                  
+                 
+                    <div class="input">
+                        <center>
+                       <img src="audio/a3fb14bfef5bb95a06a2993c085600c12b0df8f2_hq.jpg" width="120px">
+                    </center>   
+                    <input id="inpu_qtd_dinheiro" placeholder="Qual Valor Você Tem R$" type="text" required = "">
+                    </div>
+                  
+                          
+                 <center>
+                       <button  onclick="simular()">Simular</button>
+                    </center>
+                    <div id="resultado" class="resultado"></div>
+            </div>
+            
+        </div>
+                    </div>
+                </div>
+            </div>
+       </div>
+       
+
+                
+                
+            </div>
+                    </div>
+        </div>
+    </div>
+            </div>
+       </div>
+    <div class="footer">
+        <div class="container">
+            <h4>Feito com Amor por Ewerton Lima &copy; 2022</h4>
+        </div>      
+    </div>
+   
+
+</body>
+</html>
+<script>
+
+function simular(){
+
+    var qtdTrofeus = Number(input_qtd_trofeus.value)
+    var qtdDinheiro = Number(inpu_qtd_dinheiro.value)
+
+    var total = qtdDinheiro * 25
+
+    
+
+    resultado.innerHTML = ` <span style="color: #00FF00;">Com ${qtdDinheiro} Reais Você Consegue Comprar ${total} Gemas</span>
+    `
+
+  
+
+
+    if(qtdTrofeus >8000){
+        resultado.innerHTML = `<span>Parábens você está na Liga Maior Campeão</span>`
+    }
+    else if(qtdTrofeus >7600){
+        resultado.innerHTML = `<span>Parábens você está na Liga Maior Campeão</span>`
+    }
+    else if(qtdTrofeus>7300){
+        resultado.innerHTML = `<span>Parábens você está na Liga Grandex' Campeão</span>`
+    }
+    else if(qtdTrofeus >7000){
+        resultado.innerHTML = `<span>Parábens você está na Liga Campeão</span>`
+    }
+    else if(qtdTrofeus > 6600){
+        resultado.innerHTML = `<span>Parábens você está na Liga Mestre 3</span>`
+    }
+   else if(qtdTrofeus > 6300){
+    resultado.innerHTML = `<span>Parábens você está na Liga Mestre 2</span>`
+   }
+   else if(qtdTrofeus > 6000){
+    resultado.innerHTML = `<span>Parábens você está na Liga Mestre</span>`
+   }
+   else if(qtdTrofeus > 5600){
+    resultado.innerHTML = `<span>Parábens você está na Liga Desafiante 3</span>`
+   }
+   else if(qtdTrofeus > 5300){
+    resultado.innerHTML = `<span>Parábens você está na Liga Desafiante 2</span>`
+   }
+   else if(qtdTrofeus >5000){
+    resultado.innerHTML = `<span>Parábens você está na Arena Lendária</span>`
+   }
+   else if(qtdTrofeus > 4600){
+    resultado.innerHTML = `<span>Parábens você está na Arena Pico Sereno</span>`
+   }
+   else if(qtdTrofeus > 4200){
+    resultado.innerHTML = `<span>Parábens você está na Arena Covil dos Patifes</span>`
+   }
+   else if(qtdTrofeus > 3800){
+       resultado.innerHTML = `<span>Parábens você está na Arena Cidade Assombrada</span>`
+   }
+   else if(qtdTrofeus > 3400){
+    resultado.innerHTML = `<span>Parábens você está na Arena Eletrovale</span>`
+   }
+   else if(qtdTrofeus > 3000){
+    resultado.innerHTML = `<span>Parábens você está na Arena Montanha do Porco</span>`
+    }
+    else if(qtdTrofeus > 2600){
+        resultado.innerHTML = `<span>Parábens você está na Arena da Selva</span>`
+    }
+    else if(qtdTrofeus > 2300){
+        resultado.innerHTML = `<span>Parábens você está na Arena Pico Congelado</span>`
+    }
+    else if(qtdTrofeus > 2000){
+        resultado.innerHTML = `<span>Parábens você está na Arena Real</span>`
+    }
+    else if(qtdTrofeus >1600){
+        resultado.innerHTML = `<span>Parábens você está na Oficina do Construtor</span>`
+    }
+    else if(qtdTrofeus > 1300){
+        resultado.innerHTML = `<span>Parábens você está no Vale dos Feitiços</span>`
+    }
+    else if(qtdTrofeus >1100){
+        resultado.innerHTML = `<span>Parábens você está no Parquinho da P.E.K.K.A</span>`
+    }
+    else if(qtdTrofeus >600){
+        resultado.innerHTML = `<span>Parábens você está no Torneio Bárbaro</span>`
+    }
+    else if(qtdTrofeus > 300){
+        resultado.innerHTML = `<span>Parábens você está na Fosso dos Ossos</span>`
+    }
+    else if (qtdTrofeus >0){
+        resultado.innerHTML = `<span>Parábens você está no Estádio do Goblin</span>`
+    }
+}
+
+
+
+
+</script>
