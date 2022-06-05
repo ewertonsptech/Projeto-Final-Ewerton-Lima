@@ -35,9 +35,9 @@
             </h3>
             
             
-            <centr>
+         
             
-    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="30px" >
+    <img src="img/goblin-gigante-3d-render-clash-royale-goblin-giant.png" width="50px" >
 
             
             
@@ -45,18 +45,25 @@
             <div class="input">
            <input id="input_nome"placeholder="Digite Seu Nome"  
          type="text" required = "">
+         <div class="div1">
+            <span id="span_nome"></span>
+            </div>
+   
                
            
             
-            
-                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="30px" >
+            <center>
+                <img src="img/Clash-Royale-Characters-PNG-Free-Download.png" width="60px" >
            
               
         <input id="input_email" placeholder="Digite Seu Email" type="email" required = "" >
-           
+        <div class="div4">
+            <span id="span_email"></span>
+            </div>
+    </center>
       
-
-            <img src="img/images.jpg" width="30px">
+<center>
+            <img src="img/images.jpg" width="60px">
          
             
                
@@ -64,7 +71,7 @@
            
         
         
-           
+        </center>
            
                
          <p> Qual Seu Personagem Favorito: </p> <select id="select_personagem">
@@ -77,16 +84,17 @@
             <option value="6">Gigante Real</option>
           </select>
                 
-               <center>
-          <div class="input">
-                    <button onclick="cadastrar()" class="cta">Cadastrar
-                        <i class="ri-arrow-right-line"></i></button>
-                    </center>
-                </div>
-           
-            </div>
-            
-          </div>
+          
+        </div>
+        
+        
+    <div class="input">
+        <i class="ri-arrow-right-line"></i>
+ 
+<center>
+<button onclick="cadastrar()" class="cta">Cadastrar</button>
+</center>
+    </div>
         
                 </div>
                 
@@ -121,6 +129,8 @@
 </html>
 <script>
 
+
+
 function cadastrar() {
        // aguardar();
 
@@ -134,7 +144,17 @@ function cadastrar() {
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || personagemVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            //declarando variavel
+
+            if(nomeVar.length < 3){
+                cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Nome Inválido)";
+            }
+            else if(senhaVar.length <3){
+              cardErro.style.display = "block"
+              mensagem_erro.innerHTML = ("Senha Muito Pequena tente Novamente")
+            }
+
+       //declarando variavel
 var validos ="";
 
 //divide emailStr em um array de strings separados pelo 'separador esvirgula'
@@ -151,6 +171,8 @@ for (var i = 0; i <= emails.length; i++) {
          validos += (emails[i]) +";" ;  
      }
 }
+
+     
 
 
             finalizarAguardar();

@@ -104,7 +104,9 @@ button{
     transition: all 0.6s ease-in-out 0s;
     padding: 10px;
     border-radius: 12px;
-    float: left;
+    float: right;
+   
+    
 
 }
 button:hover{
