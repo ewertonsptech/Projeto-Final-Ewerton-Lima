@@ -262,7 +262,7 @@ function atualizarGrafico(idAquario, dados) {
             response.json().then(function (novoRegistro) {
 
                 console.log(`Dados recebidos Atualizar  Graficos: ${JSON.stringify(novoRegistro)}`);
-                console.log(`Dados atuais do gráfico: ${dados}`);
+                console.log(dados);
 
             for (i = 0; i < novoRegistro.length; i++) {
                 var registro = novoRegistro[i];
